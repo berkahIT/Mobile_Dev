@@ -1,0 +1,29 @@
+name: pertemuan6
+description: A new Flutter project.
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.0.2 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Open Sans
+      fonts:
+        - asset: fonts/OpenSans-VariableFont_wdth,wght.ttf
+    - family: Kablammo
+      fonts:
+        - asset: fonts/Kablammo-Regular-VariableFont_MORF.ttf
+    - family: Noto Sans Japanese
+      fonts:
+        - asset: fonts/font_jepang.ttf
