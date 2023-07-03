@@ -143,7 +143,7 @@ class LoginPage extends StatelessWidget {
                         Text(" atau login dengan "),
                         Expanded(
                           child: Divider(
-                            color: Colors.black,
+                            color: Colors.grey,
                             thickness: 1,
                           ),
                         ),
