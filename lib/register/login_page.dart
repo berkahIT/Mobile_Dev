@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:slicing/home/home.dart';
 import 'package:slicing/register/daftar.dart';
 
 class LoginPage extends StatelessWidget {
@@ -68,9 +69,11 @@ class LoginPage extends StatelessWidget {
                           hintText: "Email",
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(color: Color(0xFF959191))),
+                              borderSide:
+                                  const BorderSide(color: Color(0xFF959191))),
                           border: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Color(0xFF959191)),
+                              borderSide:
+                                  const BorderSide(color: Color(0xFF959191)),
                               borderRadius: BorderRadius.circular(10)),
                           contentPadding: const EdgeInsets.symmetric(
                               horizontal: 15, vertical: 17))),
@@ -116,7 +119,12 @@ class LoginPage extends StatelessWidget {
                       height: 54,
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) {
+                            return HomePage();
+                          }));
+                        },
                         child: Text(
                           "Masuk",
                           style: TextStyle(
@@ -143,12 +151,14 @@ class LoginPage extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 12),
-                          child: Text(" atau login dengan ",style: TextStyle(
-                            color: Color(0xFF747070),
-                            fontFamily: "Outfit",
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400
-                          ),),
+                          child: Text(
+                            " atau login dengan ",
+                            style: TextStyle(
+                                color: Color(0xFF747070),
+                                fontFamily: "Outfit",
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400),
+                          ),
                         ),
                         Expanded(
                           child: Divider(
@@ -166,20 +176,23 @@ class LoginPage extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(right: 5),
-                          child: Image(image: AssetImage("assets/icons/icon.png"),
-                          width: 19,
-                          height: 20,),
+                          child: Image(
+                            image: AssetImage("assets/icons/icon.png"),
+                            width: 19,
+                            height: 20,
+                          ),
                         ),
-                        Text("Google", style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 14,
-                          fontFamily: "Poppins",
-                          fontWeight: FontWeight.w500
-                        ),)
+                        Text(
+                          "Google",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontFamily: "Poppins",
+                              fontWeight: FontWeight.w500),
+                        )
                       ],
                     ),
                   ),
-                  
                   Padding(
                     padding: const EdgeInsets.only(top: 38, bottom: 18),
                     child: Row(
@@ -196,15 +209,16 @@ class LoginPage extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
                               return const Daftar();
                             }));
                           },
                           child: Text(
                             "Daftar",
                             style: TextStyle(
-                                color:
-                                    Colors.black.withOpacity(0.6000000238418579),
+                                color: Colors.black
+                                    .withOpacity(0.6000000238418579),
                                 fontSize: 12,
                                 fontFamily: "Poppins",
                                 fontWeight: FontWeight.w700),
