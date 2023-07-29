@@ -1,0 +1,40 @@
+name: ngitengs
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment:
+  sdk: ">=3.0.3 <4.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  get: 4.6.5
+  get_storage: ^2.1.1
+  flutter_svg_provider: ^1.0.3
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/icons/
+    - assets/img/
+
+  fonts:
+    - family: Outfit
+      fonts:
+        - asset: fonts/Outfit-Regular.ttf
+
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins.ttf
+
+    - family: Plus Jakarta Sans
+      fonts:
+        - asset: fonts/PlusJakartaSans.ttf
