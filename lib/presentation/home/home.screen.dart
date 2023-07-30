@@ -10,49 +10,70 @@ class HomeScreen extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFFAFAFA),
+        leading: Icon(
+          Icons.density_medium,
+          color: Colors.black,
+        ),
+        title: Center(
+          child: Text(
+            "Home",
+            style: TextStyle(
+              color: Colors.black,
+              fontFamily: "Poppins",
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 18),
+            child: GestureDetector(
+              onTap: () {
+                Get.toNamed(Routes.PROFIL);
+              },
+              child: Image(
+                image: AssetImage("assets/img/profil.png"),
+                height: 32,
+                width: 32,
+              ),
+            ),
+          )
+        ],
+      ),
+      backgroundColor: Color(0xFFFAFAFA),
       body: Padding(
-        padding: EdgeInsets.only(top: 68, left: 18, right: 18),
+        padding: EdgeInsets.only(left: 18, right: 18),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Icon(Icons.density_medium),
-                  Text("Home"),
-                  GestureDetector(
-                    onTap: (){
-                      Get.toNamed(Routes.PROFIL);
-                    },
-                    child: Image(
-                      image: AssetImage("assets/img/profil.png"),
-                      height: 32,
-                      width: 32,
-                    ),
-                  )
-                ],
-              ),
               Padding(
                 padding: EdgeInsets.only(top: 28, bottom: 7),
                 child: Text(
                   "Selamat Datang,",
                   style: TextStyle(
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Poppins",
                     fontSize: 20,
                   ),
                 ),
               ),
               Text(
-                "Rofiqul Walidain",
+                "Khayatullah Al-Amin",
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
+                  fontFamily: "Poppins",
                   fontSize: 12,
                   color: Color(0xFF959191),
                 ),
               ),
               Container(
                 width: double.infinity,
+                padding:
+                    EdgeInsets.only(top: 20, left: 25, bottom: 10, right: 16),
                 height: 152,
                 margin: EdgeInsets.only(top: 26, bottom: 30),
                 decoration: BoxDecoration(
@@ -64,68 +85,89 @@ class HomeScreen extends GetView<HomeController> {
                       ],
                     ),
                     borderRadius: BorderRadius.circular(10)),
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                      top: 24, left: 25, right: 16, bottom: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Tabungan Saat ini",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                          color: Color(0xFFFFFFFF),
-                        ),
-                      ),
-                      Text(
-                        "Rp.500.0000.000",
-                        style: TextStyle(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Tabungan Saat ini",
+                          style: TextStyle(
                             fontWeight: FontWeight.w500,
-                            fontSize: 20,
-                            color: Color(0xFFFFFFFF)),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "VALID THRU",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 12,
-                                color: Color(0xFFFFFFFF)),
+                            fontFamily: "Poppins",
+                            fontSize: 16,
+                            color: Color(0xFFFFFFFF),
                           ),
-                          Text(
-                            "CV",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 12,
-                                color: Color(0xFFFFFFFF)),
+                        ),
+                        Container(
+                          width: 49,
+                          height: 26,
+                          decoration: ShapeDecoration(
+                              color: Color(0xFFEA964F),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5))),
+                        )
+                      ],
+                    ),
+                    Text(
+                      "Rp.500.0000.000",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontFamily: "Poppins",
+                          fontSize: 20,
+                          color: Color(0xFFFFFFFF)),
+                    ),
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 5),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "VALID THRU",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 12,
+                                    fontFamily: "Poppins",
+                                    color: Color(0xFFFFFFFF)),
+                              ),
+                              Text(
+                                "CV",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 12,
+                                    fontFamily: "Poppins",
+                                    color: Color(0xFFFFFFFF)),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "06/23",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 12,
-                                color: Color(0xFFFFFFFF)),
-                          ),
-                          Text(
-                            "***",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 12,
-                                color: Color(0xFFFFFFFF)),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "06/23",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                  fontFamily: "Poppins",
+                                  color: Color(0xFFFFFFFF)),
+                            ),
+                            Text(
+                              "***",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                  color: Color(0xFFFFFFFF)),
+                            ),
+                          ],
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ),
               Text(
