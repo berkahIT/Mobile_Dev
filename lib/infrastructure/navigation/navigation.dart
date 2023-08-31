@@ -33,7 +33,7 @@ class Nav {
     ),
     GetPage(
       name: Routes.REGISTER,
-      page: () => const RegisterScreen(),
+      page: () => RegisterScreen(),
       binding: RegisterControllerBinding(),
     ),
     GetPage(
@@ -45,6 +45,21 @@ class Nav {
       name: Routes.PROFIL,
       page: () => const ProfilScreen(),
       binding: ProfilControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.STATISTIC,
+      page: () => const StatisticScreen(),
+      binding: StatisticControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.WISTLIST,
+      page: () => WistlistScreen(),
+      binding: WistlistControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.KALKULATOR,
+      page: () => const KalkulatorScreen(),
+      binding: KalkulatorControllerBinding(),
     ),
   ];
 }

@@ -7,8 +7,10 @@ import '../../infrastructure/navigation/routes.dart';
 import 'controllers/register.controller.dart';
 
 class RegisterScreen extends GetView<RegisterController> {
-  const RegisterScreen({Key? key}) : super(key: key);
-  @override
+  RegisterScreen({Key? key}) : super(key: key);
+
+  final registerController = Get.put(RegisterController()); 
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -88,6 +90,7 @@ class RegisterScreen extends GetView<RegisterController> {
               padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
               child: TextField(
                   keyboardType: TextInputType.emailAddress,
+                  controller: registerController.email,
                   decoration: InputDecoration(
                       hintStyle: const TextStyle(
                           fontFamily: "Poppins", color: Color(0xFF535050)),
@@ -107,6 +110,7 @@ class RegisterScreen extends GetView<RegisterController> {
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: TextField(
                   obscureText: true,
+                  controller: registerController.password,
                   obscuringCharacter: "*",
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
@@ -157,7 +161,7 @@ class RegisterScreen extends GetView<RegisterController> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                     onPressed: () {
-                      Get.toNamed(Routes.LOGIN);
+                      registerController.register();
                     },
                     child: Text(
                       "Daftar",

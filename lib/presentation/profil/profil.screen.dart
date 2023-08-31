@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
 import 'package:get/get.dart';
+import 'package:ngitengs/infrastructure/navigation/routes.dart';
 
 import 'controllers/profil.controller.dart';
 
@@ -255,13 +256,18 @@ class ProfilScreen extends GetView<ProfilController> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image(image: AssetImage("assets/icons/home.png")),
-            Image(image: AssetImage("assets/icons/graf.png")),
-            Icon(
-              Icons.person_4_outlined,
-              color: Color(0xffC1C9D1),
-              size: 30,
-            )
+            GestureDetector(
+                onTap: () {
+                  Get.offNamed(Routes.HOME);
+                },
+                child: Image(
+                  image: Svg("assets/icons/home.svg"),
+                  color: Color(0xffC1C9D1),
+                )),
+            InkWell(
+                onTap: () => Get.offNamed(Routes.STATISTIC),
+                child: Image(image: AssetImage("assets/icons/graf.png"))),
+            Icon(Icons.person_4_outlined, color: Color(0xff94C3F6), size: 30),
           ],
         ),
       )),

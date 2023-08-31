@@ -3,6 +3,8 @@ import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
 import 'package:get/get.dart';
 import 'package:ngitengs/infrastructure/navigation/routes.dart';
+import 'package:ngitengs/presentation/home/views/_transaksi.dart';
+import 'package:ngitengs/widgets/card_shopping.dart';
 import 'controllers/home.controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
@@ -44,9 +46,9 @@ class HomeScreen extends GetView<HomeController> {
         ],
       ),
       backgroundColor: Color(0xFFFAFAFA),
-      body: Padding(
-        padding: EdgeInsets.only(left: 18, right: 18),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(left: 18, right: 18, bottom: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -175,7 +177,7 @@ class HomeScreen extends GetView<HomeController> {
                 style: TextStyle(
                     color: Color(0xFF303840),
                     fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.bold,
                     fontSize: 16),
               ),
               Padding(
@@ -190,12 +192,20 @@ class HomeScreen extends GetView<HomeController> {
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(8)),
-                          child: SizedBox(
-                            width: 50,
-                            height: 50,
-                            child: Icon(
-                              Icons.arrow_upward,
-                              color: Color(0xFFA8BACD),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (builder) {
+                                return const Transaksi();
+                              }));
+                            },
+                            child: SizedBox(
+                              width: 50,
+                              height: 50,
+                              child: Icon(
+                                Icons.arrow_upward,
+                                color: Color(0xFFA8BACD),
+                              ),
                             ),
                           ),
                         ),
@@ -305,7 +315,7 @@ class HomeScreen extends GetView<HomeController> {
                     style: TextStyle(
                         fontFamily: 'Poppins',
                         color: Color(0xff303840),
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.bold,
                         fontSize: 16),
                   ),
                   Icon(
@@ -314,197 +324,25 @@ class HomeScreen extends GetView<HomeController> {
                   )
                 ],
               ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 13),
-                width: double.infinity,
-                height: 60,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(6)),
-                margin: EdgeInsets.only(top: 19),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Padding(
-                            padding: const EdgeInsets.only(right: 16),
-                            child: Container(
-                                width: 32,
-                                height: 32,
-                                padding: EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                    color: Color(0xffF7F7F7),
-                                    borderRadius: BorderRadius.circular(6)),
-                                child: Image(
-                                  image: AssetImage(
-                                    "assets/icons/home.png",
-                                  ),
-                                ))),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Freelancer",
-                              style: TextStyle(
-                                  color: Color(0xFF303840),
-                                  fontSize: 12,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w500,
-                                  letterSpacing: 1),
-                            ),
-                            Text(
-                              "14 July 2023",
-                              style: TextStyle(
-                                  color: Color(0xFF7C8894),
-                                  fontSize: 10,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: 1),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Text(
-                      "+ Rp.3.000.000",
-                      style: TextStyle(
-                          color: Color(0xFF009688),
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Poppins',
-                          letterSpacing: 1),
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 13),
-                width: double.infinity,
-                height: 60,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(6)),
-                margin: EdgeInsets.only(top: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                            padding: const EdgeInsets.only(right: 16),
-                            child: Container(
-                                width: 32,
-                                height: 32,
-                                padding: EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                    color: Color(0xffF7F7F7),
-                                    borderRadius: BorderRadius.circular(6)),
-                                child: Image(
-                                  image: Svg(
-                                    "assets/icons/shop.svg",
-                                  ),
-                                ))),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Beli Skincare",
-                              style: TextStyle(
-                                  color: Color(0xFF303840),
-                                  fontSize: 12,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w500,
-                                  letterSpacing: 1),
-                            ),
-                            Text(
-                              "15 July 2023",
-                              style: TextStyle(
-                                  color: Color(0xFF7C8894),
-                                  fontSize: 10,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: 1),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Text(
-                      "- Rp.500.000",
-                      style: TextStyle(
-                          color: Color(0xFFDC143C),
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Poppins',
-                          letterSpacing: 1),
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 13),
-                width: double.infinity,
-                height: 60,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(6)),
-                margin: EdgeInsets.only(top: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                            padding: const EdgeInsets.only(right: 16),
-                            child: Container(
-                                width: 32,
-                                height: 32,
-                                padding: EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                    color: Color(0xffF7F7F7),
-                                    borderRadius: BorderRadius.circular(6)),
-                                child: Image(
-                                    image: Svg("assets/icons/shop.svg")))),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Beli Skin Care",
-                              style: TextStyle(
-                                  color: Color(0xFF303840),
-                                  fontSize: 12,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w500,
-                                  letterSpacing: 1),
-                            ),
-                            Text(
-                              "15 July 2023",
-                              style: TextStyle(
-                                  color: Color(0xFF7C8894),
-                                  fontSize: 10,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: 1),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Text(
-                      "- Rp.500.000",
-                      style: TextStyle(
-                          color: Color(0xFFDC143C),
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Poppins',
-                          letterSpacing: 1),
-                    )
-                  ],
-                ),
-              )
+              CardShopping(
+                  titleCard: "Freelancer",
+                  dateCard: "14 Juli 2023",
+                  priceCard: "+Rp.3.000.000",
+                  color: Color(0xFF009688),
+                  iconCard:
+                      Svg("assets/icons/home.svg", color: Color(0xffC1C9D1))),
+              CardShopping(
+                  titleCard: "Beli Skin Care",
+                  dateCard: "15 Juli 2023",
+                  priceCard: "-Rp.500.000",
+                  color: Colors.red,
+                  iconCard: Svg("assets/icons/shop.svg")),
+              CardShopping(
+                  titleCard: "Beli Makanan",
+                  dateCard: "15 Juli 2023",
+                  priceCard: "-Rp.500.000",
+                  color: Colors.red,
+                  iconCard: Svg("assets/icons/shop.svg")),
             ],
           ),
         ),
@@ -515,13 +353,15 @@ class HomeScreen extends GetView<HomeController> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image(image: AssetImage("assets/icons/home.png")),
-            Image(image: AssetImage("assets/icons/graf.png")),
-            Icon(
-              Icons.person_4_outlined,
-              color: Color(0xffC1C9D1),
-              size: 30,
-            )
+            Image(image: Svg("assets/icons/home.svg")),
+            GestureDetector(
+                onTap: () => Get.toNamed(Routes.STATISTIC),
+                child: Image(image: AssetImage("assets/icons/graf.png"))),
+            GestureDetector(
+              onTap: () => Get.toNamed(Routes.PROFIL),
+              child: Icon(Icons.person_4_outlined,
+                  color: Color(0xffC1C9D1), size: 30),
+            ),
           ],
         ),
       )),
